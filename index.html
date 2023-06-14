@@ -12,6 +12,17 @@
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -19,6 +30,9 @@
             colors: {
               purplered: "#45164B",
             },
+          },
+          corePlugins: {
+            preflight: false,
           },
         },
       };
@@ -40,6 +54,7 @@
             <button
               type="button"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              id="bringOut"
             >
               <span class="sr-only">Open main menu</span>
               <svg
@@ -111,6 +126,107 @@
             </button>
           </div>
         </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div
+          class="lg:hidden sidebar"
+          role="dialog"
+          aria-modal="true"
+          id="sidebar"
+        >
+          <!-- Background backdrop, show/hide based on slide-over state. -->
+          <div class="fixed inset-0 z-50"></div>
+          <div
+            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          >
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img class="h-8 w-auto" src="./media/atlas.png" alt="" />
+              </a>
+              <button
+                type="button"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                id="takeIn"
+              >
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10 flex flex-col">
+                <div class="space-y-2 py-6 flex flex-col">
+                  <div class="dropdown">
+                    <button class="dropbtn">
+                      Resident
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropbtn">
+                      Owner / Investor
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropbtn">
+                      Company
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropbtn">
+                      Resource
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="py-6 flex flex-col font-semibold">
+                  <button class="bg-slate-200 rounded py-2 px-4 mr-4 w-full">
+                    Log in
+                  </button>
+                  <button
+                    class="bg-purplered text-white py-2 px-8 rounded w-full my-3"
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
 
       <div class="relative isolate px-6 pt-14 lg:px-8 w-full justify-between">
@@ -297,6 +413,8 @@
         </div>
       </div>
     </div>
+
+    <script src="./main.js"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
